@@ -15,17 +15,20 @@ include 'db.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .welcome { margin-bottom: 20px; }
-        .logout { color: red; text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="welcome">
-        <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-        <p>You're now logged in to your account.</p>
+    <div class ="card">
+        <header>
+            <h1>YouChef</h1>
+        </header>
+        <div class="welcome">
+            <h3>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
+            <p>You're now logged in to your account.</p>
+            <?php include 'main.php'; ?>
+            <?php include 'nav.php'; ?>
+            <?php include 'footer.php'; ?>
+        </div>
     </div>
-    <a href="logout.php" class="logout">Logout</a>
 </body>
 </html>
